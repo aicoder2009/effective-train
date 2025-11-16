@@ -1,0 +1,26 @@
+{
+  "name": "effective-train",
+  "version": "1.0.0",
+  "description": "AI Study Buddy transforms how students approach learning by combining AWS-powered conversational AI with intuitive UX design. Rather than passive study sessions, students engage with an adaptive study companion that understands their learning pace, subject gaps, and preferred explanation styles—creating a personalized journey toward mastery.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext js,jsx",
+    "format": "prettier --write \"src/**/*.{js,jsx,css}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "vite": "^7.2.2"
+  }
+}

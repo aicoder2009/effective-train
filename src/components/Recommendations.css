@@ -1,0 +1,243 @@
+.recommendations {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px var(--shadow);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.recommendations-header {
+  margin-bottom: 2rem;
+}
+
+.recommendations-header h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.recommendations-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.no-recommendations {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+}
+
+.no-rec-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-recommendations p {
+  font-size: 1rem;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.recommendation-card {
+  background: linear-gradient(135deg, var(--background) 0%, #fff 100%);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.recommendation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px var(--shadow);
+  border-color: var(--primary-color);
+}
+
+.recommendation-card:hover::before {
+  width: 6px;
+}
+
+.recommendation-card.priority-high {
+  border-color: var(--error);
+}
+
+.recommendation-card.priority-high::before {
+  background: var(--error);
+}
+
+.recommendation-card.priority-medium {
+  border-color: var(--primary-color);
+}
+
+.recommendation-card.priority-medium::before {
+  background: var(--primary-color);
+}
+
+.recommendation-card.priority-low {
+  border-color: var(--text-secondary);
+}
+
+.recommendation-card.priority-low::before {
+  background: var(--text-secondary);
+}
+
+.rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rec-icon {
+  font-size: 2.5rem;
+}
+
+.rec-priority-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  background: var(--background);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.priority-high .rec-priority-badge {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.priority-medium .rec-priority-badge {
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.priority-low .rec-priority-badge {
+  background: rgba(107, 114, 128, 0.1);
+  color: var(--text-secondary);
+  border-color: var(--text-secondary);
+}
+
+.rec-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.rec-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.rec-action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.rec-action-button:hover {
+  background: var(--primary-dark);
+  transform: translateX(4px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.rec-action-button:active {
+  transform: translateX(2px);
+}
+
+.priority-high .rec-action-button {
+  background: var(--error);
+}
+
+.priority-high .rec-action-button:hover {
+  background: #dc2626;
+}
+
+.priority-low .rec-action-button {
+  background: var(--text-secondary);
+}
+
+.priority-low .rec-action-button:hover {
+  background: #4b5563;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .recommendations {
+    padding: 1.5rem;
+  }
+
+  .recommendations-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .recommendation-card {
+    padding: 1.25rem;
+  }
+
+  .rec-icon {
+    font-size: 2rem;
+  }
+
+  .rec-title {
+    font-size: 1.125rem;
+  }
+
+  .rec-description {
+    font-size: 0.9rem;
+  }
+
+  .rec-action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommendations {
+    padding: 1rem;
+  }
+
+  .rec-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .rec-priority-badge {
+    align-self: flex-start;
+  }
+}
